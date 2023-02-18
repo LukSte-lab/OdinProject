@@ -1,0 +1,11 @@
+/* This is my 4rt CSS exercise, started 31/7/22 */
+.avatar.proportioned
+{
+    height: 300px;
+    width: 300px;
+}
+.avatar.distorted
+{
+    height: 400px;
+    width: 200px;
+}

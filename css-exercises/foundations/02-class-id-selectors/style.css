@@ -1,0 +1,21 @@
+/* This is my second CSS exercise started 30/7/22 */ 
+.backpink 
+{ 
+    background-color: rgb(242, 194, 196);
+    font-family: Verdana, DejaVu Sans, sans-serif;
+}
+.bigfont
+{
+    font-size: 24px;
+}
+#bigid
+{
+    color: blue;
+    font-size: 36px;
+}
+#smallid
+{
+    background-color: rgb(46, 242, 46);
+    font-size: 24px;
+    font-weight: bold;
+}
