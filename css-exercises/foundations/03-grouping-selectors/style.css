@@ -1,0 +1,16 @@
+/* This is my 3rd CSS exercise, started 31-7-22 */
+.click, 
+.noclick
+{
+    font-size: 28px;
+    font-family: Helvetica, Times New Roman, sans-serif;
+}
+.click
+{
+    background-color: black;
+    color: white;
+}
+.noclick
+{
+    background-color: yellow;
+}

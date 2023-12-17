@@ -1,0 +1,29 @@
+.container{ 
+  display: flex;
+  height : 100vh;
+  gap: 25px;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+[class ^="box-"]{
+   width: 140px;
+   height: 140px;
+   background-color: skyblue;
+   border: 2px solid black;
+
+/* To view the letter better */
+   font-size: 65px;
+   display : flex;
+   justify-content : center;
+   align-items : center;
+}
+.box-1{
+  flex-shrink: 1;
+}
+.box-2{
+  flex : 2 1 30em;
+}
+.box-1{
+  flex-shrink: 1;
+}
