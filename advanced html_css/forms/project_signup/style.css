@@ -1,0 +1,116 @@
+html, body {
+  background-image: url("./images/green.jpg");
+  margin: 0;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url(./fonts/Norse-Bold.otf) format("woff2");
+  src: url(./fonts/Norse-Bold.otf) format("woff");
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.column-left {
+  flex-basis: 50%; /* sets initial width to 50% */
+  font-family: "MyWebFont", sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  align-self: center;
+  background-color:rgba(0,0,0,0.5); /* easier to read text */
+}
+
+.column-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.top-card {
+  background-color: rgb(247, 244, 244);
+  font-weight: 900;
+  padding: 100px;
+  height: 100%;
+}
+
+.form-card {
+  background-color: white;
+  padding: 100px;
+  align-self: stretch; /* fills in the gap to container left edge */
+  height: 100%;
+}
+
+.bottom-card {
+  background-color: rgb(247, 244, 244);
+  padding: 50px 100px 100px 100px;
+  align-self: stretch; /* fills in the gap to container left edge */
+  height: 100%;
+}
+
+input, label {
+  display: block;
+  border-radius: 5px;
+}
+
+.first-Name, .email, .password {
+  float: left;
+  margin-right: 80px;
+}
+
+.last-Name {
+  float: left;
+}
+
+.phone {
+  float: left;
+}
+
+.password-confirm {
+  float: left;
+}
+
+input {
+  border-color: #E5E7EB;
+}
+
+input:focus {
+  border-color: blue;
+  border-width: 1px;
+  box-shadow:  5px 5px rgb(175, 173, 173);
+}
+
+/*added in error class manuallu as per discord guidence -
+will use JS form validation down the road when its taught */
+
+.error {
+  border-color: red;
+  border-width: 1px;
+}
+
+/*added in error class manuallu as per discord guidence -
+will use JS form validation down the road when its taught */
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+}
+
+button {
+  background-color: rgb(78, 163, 197);
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 900;
+}   
+
+a {
+  color: rgb(78, 163, 197);
+  text-decoration: none;
+}
