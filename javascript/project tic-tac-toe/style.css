@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  background-color: gray;
+}
+
+.grid-box {
+  border: 1px solid blue;
+  color: red;
+  font-size: 50px;
+  display: grid;
+  grid-template-rows: 1fr .3fr;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.game-board-button {
+  background-color: white;
+  grid-row: 2 / 3;
+}
+
+.start-game-button {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.clear-board-button {
+  margin-top: 15px;
+}
