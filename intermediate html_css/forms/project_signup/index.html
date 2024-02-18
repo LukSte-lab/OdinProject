@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-Up-Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="column-left">
+            <h1>LukSte-Lab</h1>
+        </div>
+        <div class="column-right">
+            <div class="top-card">
+                <p>Welcome to LukSte-Lab, sign in form exercise!  Please fill out the brief form below for one of our consultants to reach out to you to see how we can help your thriving business grow faster.</p>
+            </div>
+            <div class="form-card">
+                <p><strong>Let's do this!</strong></p>
+                <form>
+                    <div class="first-Name">
+                        <label for="first_Name">First Name:</label>
+                        <input type="text" id="first_Name" name="first_Name">
+                    </div>
+                    <div class="last-Name"> 
+                        <label for="last_Name">Last Name:</label>
+                        <input type="text" id="last_Name" name="last_Name">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="phone">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="password">
+                        <label for="password">Password:</label>
+                        <!--added in error class manually as per discord guidence -
+                        will use JS form validation down the road when its taught-->
+                        <input class="error" type="password" id="password" name="password"> <!--added in error class manually as per discord guidence-->
+                        <!--added in error class manually as per discord guidence -
+                        will use JS form validation down the road when its taught-->
+                        <p class="error-msg">*Passwords do not match</p>
+                    </div>
+                    <div class="password-confirm">
+                        <label for="password-confirm">Confirm Password:</label>
+                        <!--added in error class manually as per discord guidence -
+                        will use JS form validation down the road when its taught-->
+                        <input class="error" type="password" id="password-confirm" name="password-confirm">
+                    </div>
+                </form>
+            </div>
+            <div class="bottom-card">
+                <button type="submit">Create Account</button>
+                <p>Already have an account?  <a href="?">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
