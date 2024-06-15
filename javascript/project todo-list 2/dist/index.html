@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="./img/favicon.png">
+    <title>// TO-DO</title>
+</head>
+<body>
+
+
+    <div class="overlay-edit overlay-edit-invisible">
+        <div class="edit-popup">
+            <div class="edit-popup__close">&times;</div>
+        	<form class="edit-popup__entry">
+        	            
+        	            
+                <textarea class="edit-popup__input" id="edit-todo-title" name="edit-todo" 
+                maxlength="40" required>Title: Pay bills</textarea>
+        	        
+        	    
+        
+        	    
+        	    <textarea class="edit-popup__input edit-popup__input-big" 
+        	    id="edit-todo-details" name="edit-todo" >Details: e.g internet, phone, rent.</textarea>
+        	        
+        	    
+        	    <div class="edit-popup__date">
+        	        <div class="edit-popup__date-title">Due Date:</div>
+        	        <input type="date" class="edit-popup__date-input"id="edit-todo-date" 
+        	        name="edit-todo" required value="2021-01-22">
+        	    </div>
+        	    
+        
+        	    <div class="edit-popup__wrapper-priority-submit">
+        	        <div class="edit-popup__priority">
+        	            <div class="edit-popup__priority-title">Priority:</div>
+        	            <input type="radio" id="edit-low"  
+        	            name="edit-priority" value="low" checked required>
+        	            <label for="edit-low" class="edit-popup__priority-btn edit-popup__priority-btn--low edit-popup__priority-btn--low-active">Low</label>
+            
+        	            <input type="radio" id="edit-medium" 
+        	            name="edit-priority" value="medium" required>
+        	            <label for="edit-medium" class="edit-popup__priority-btn edit-popup__priority-btn--medium">Medium</label>
+            
+        	            <input type="radio" id="edit-high" 
+        	            name="edit-priority" value="high" >
+        	            <label for="edit-high" class="edit-popup__priority-btn edit-popup__priority-btn--high">High</label >
+        	        </div>   
+        
+        	        <input type="submit" class="edit-popup__todo-submit" id="todo-edit-submit" value="Confirm Edit"> 
+        	        
+        	    </div>
+        	    
+        	</form>
+        </div>
+
+    </div>
+
+    <div class="overlay-details overlay-details-invisible">
+        <div class="details-popup">
+            <div class="details-popup__close">&times;</div>
+            <div class="details-popup__content">
+            	<div class="details-popup__title">Go shopping</div>
+            	<div class="details-popup__project"><span class="details-popup__catagory">Project:</span>Diet</div>
+            	<div class="details-popup__priority"><span class="details-popup__catagory">Priority:</span>High</div>
+            	<div class="details-popup__due"><span class="details-popup__catagory">Due Date:</span>January 23rd, 2021</div>
+            	<div class="details-popup__details"><span class="details-popup__details-title">Details: </span><span class="details-popup__details-text">I need chicken, vegetables, cream, steak and some other stuff. Maybe get some sauces n stuff too.</span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="overlay-new overlay-new-invisible">
+    <!-- <div class="overlay-new"> -->
+        <form class="create-new">
+        <!-- <form class="create-new create-new-open"> -->
+            
+            <div class="create-new__header">
+                <h2 class="create-new__heading">Create a new...</h2>
+                <div class="create-new__close">&times;</div>
+            </div>
+            
+            <div class="create-new__content">
+                <div class="create-new__sidebar">
+                	<ul class="create-new__options">
+                	    <li class="create-new__options-items create-new__options-items-active" id="new-todo-link">To Do</li>
+                	    <li class="create-new__options-items" id="new-project-link">Project</li>
+                	    <li class="create-new__options-items" id="new-note-link">Note</li>
+                
+                	</ul>
+                </div>
+                <div class="create-new__entry" id="new-todo-menu">
+                    
+                    
+                    <textarea class="create-new__input" placeholder="Title: Pay bills" 
+                    id="new-todo-title" name="new-todo" maxlength="40" required></textarea>
+                        
+                    
+
+                    
+                    <textarea class="create-new__input create-new__input-big" 
+                    placeholder="Details: e.g internet, phone, rent." id="new-todo-details" 
+                    name="new-todo"></textarea>
+                        
+                    
+                    <div class="create-new__date">
+                        <div class="create-new__date-title">Due Date:</div>
+                        <input type="date" class="create-new__date-input"id="new-todo-date" 
+                        name="new-todo" required>
+                    </div>
+                    
+
+                    <div class="create-new__wrapper-priority-submit">
+                        <div class="create-new__priority">
+                            <div class="create-new__priority-title">Priority:</div>
+                            <input type="radio" id="create-new-low"  
+                            name="create-new-priority" value="low" required>
+                            <label for="create-new-low" class="create-new__priority-btn create-new__priority-btn--low">Low</label>
+            
+                            <input type="radio" id="create-new-medium" 
+                            name="create-new-priority" value="medium" required>
+                            <label for="create-new-medium" class="create-new__priority-btn create-new__priority-btn--medium">Medium</label>
+            
+                            <input type="radio" id="create-new-high" 
+                            name="create-new-priority" value="high" >
+                            <label for="create-new-high" class="create-new__priority-btn create-new__priority-btn--high">High</label >
+                        </div>   
+                        
+                        
+                        
+
+                        <input type="submit" class="create-new__todo-submit" id="todo-submit" value="Add To Do"> 
+                        
+                    </div>
+                    
+                </div>
+
+                <!-- this is the second menu of the create new popup -->
+                <div class="create-new__project" id="new-project-menu">
+
+                    <textarea class="create-new__project-input" placeholder="Title: House Renovation" 
+                    id="new-project-title" name="new-project" maxlength="40"></textarea>
+
+                    <div class="create-new__project-submit">Create Project</div>
+                </div>
+
+                <!-- this is the third menu of create new form. add new note -->
+                <div class="create-new__note" id="new-note-menu">
+
+                    <textarea class="create-new__note-input" placeholder="Title" 
+                    id="new-note-title" name="new-note" maxlength="30"></textarea>
+
+                    <textarea class="create-new__note-input create-new__note-input-big" placeholder="Details" 
+                    id="new-note-text" name="new-note"></textarea>
+
+                    <div class="create-new__note-submit">Create note</div>
+                </div>
+
+            </div>
+
+            
+             
+        </form>
+    </div>
+
+    <div class="content">
+
+        
+
+        
+        <header class="header">
+            <img src="img/logo.png" alt="logo" class="logo">
+            <div class="menu-btn">
+                <div class="menu-btn__icon--before"></div>
+                <div class="menu-btn__icon"></div>
+                <div class="menu-btn__icon--after"></div>
+            </div>
+        </header>
+
+        <nav class="side-bar">
+
+            <ul class="nav">
+                <li class="nav__item nav__item--link project-count-container nav__selected"><span class="project-name todo-folder">Home</span><span class="home-count">1</span></li>
+                <li class="nav__item nav__item--link project-count-container"><span class="project-name todo-folder">Today</span><span class="today-count">0</span></li>
+                <li class="nav__item nav__item--link project-count-container" id="week-nav"><span class="project-name todo-folder">Week</span><span class="week-count">0</span></li>
+                <li class="nav__item nav__item--projects">
+                    <span class="nav__item--projects-title">Projects</span>
+                    <ul class="projects">
+                        <!-- <li class="projects__item custom-project-count-container"><span class="project-name todo-folder">Work</span><span class="project-count">1</span></li>
+                        <li class="projects__item custom-project-count-container"><span class="project-name todo-folder">Gym</span><span class="project-count">3</span></li>
+                        <li class="projects__item custom-project-count-container"><span class="project-name todo-folder">Study</span><span class="project-count">2</span></li> -->
+                    </ul>
+                </li>
+                <li class="nav__item nav__item--link" id="notes-nav">Notes</li>
+
+            </ul>
+            <div class="new-todo">&plus;</div>
+
+        </nav>
+
+        <div class="main__container">
+            <main class="main">
+                
+                <!-- <div class="todo priority-high">
+                    <div class="todo__complete todo__complete-checked">
+                        
+                        
+                    </div>
+                    <div class="todo__title todo__title-checked">
+                        Eat some cheese
+                    </div>
+                    <div class="todo__detail todo__detail-checked">
+                        details
+                    </div>
+                    <div class="todo__date todo__date-checked">
+                        May 18th
+                    </div>
+                    <svg class="todo__icon todo__icon-checked todo__icon-edit">
+                        <use xlink:href="../img/edit.svg#icon-edit">
+                    </svg>
+                    <svg class="todo__icon todo__icon-checked todo__icon-bin">
+                        <use xlink:href="../img/icons.svg#icon-bin">
+                    </svg>
+                    
+                    
+                </div> -->
+                <!--<div class="todo priority-medium">
+                    <div class="todo__complete">
+                        
+                    </div>
+                    <div class="todo__title">
+                        Finish to do project
+                    </div>
+                    <div class="todo__detail">
+                        details
+                    </div>
+                    <div class="todo__date">
+                        May 18th
+                    </div>
+                    <svg class="todo__icon">
+                        <use xlink:href="../img/icons.svg#icon-bin">
+                    </svg>
+                    
+                </div>
+                <div class="todo priority-low">
+                    <div class="todo__complete">
+                        
+                    </div>
+                    <div class="todo__title">
+                        Scratch my foot
+                    </div>
+                    <div class="todo__detail">
+                        details
+                    </div>
+                    <div class="todo__date">
+                        May 18th
+                    </div>
+                    <svg class="todo__icon">
+                        <use xlink:href="../img/icons.svg#icon-bin">
+                    </svg>
+                    
+                </div>
+                <div class="todo priority-low">
+                    <div class="todo__complete">
+                        
+                    </div>
+                    <div class="todo__title">
+                        Slay noobs
+                    </div>
+                    <div class="todo__detail">
+                        details
+                    </div>
+                    <div class="todo__date">
+                        May 18th
+                    </div>
+                    <svg class="todo__icon">
+                        <use xlink:href="../img/icons.svg#icon-bin">
+                    </svg>
+                    
+                </div>
+                <div class="todo priority-medium">
+                    <div class="todo__complete">
+                        
+                    </div>
+                    <div class="todo__title">
+                        Go shopping
+                    </div>
+                    <div class="todo__detail">
+                        details
+                    </div>
+                    <div class="todo__date">
+                        May 18th
+                    </div>
+                    <svg class="todo__icon">
+                        <use xlink:href="../img/icons.svg#icon-bin">
+                    </svg>
+                    
+                </div> -->
+                <!-- <div class="add-or-remove">
+                    <div class="add-or-remove__heading">Empty Project!</div>
+                    <div class="add-or-remove__content">
+                        <div class="add-or-remove__content-text">
+                            Create a new to-do item or
+                        </div>
+                        <div class="add-or-remove__content-btn">
+                            Delete Project
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="grid">
+                    <div class="grid-col grid-col--1">
+
+                    </div>
+                    <div class="grid-col grid-col--2">
+
+                    </div>
+                    <div class="grid-col grid-col--3">
+
+                    </div> -->
+
+
+                    <!-- <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" >Books to read</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false">
+                            book1<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 2</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 3</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                            book4<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 4</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book2<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 5</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book1<br>
+                            book1<br>
+                            book1<br>
+                            book2<br>
+                            book2<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 6</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 7</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book2<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 8</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book1<br>
+                            book1<br>
+                            book1<br>
+                            book2<br>
+                            book2<br>
+                            book2<br>
+                            book3<br>
+                            book4<br>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <div class="note__close">&times;</div>
+                        <div class="note__title"  
+                         contenteditable="true" spellcheck="false" name="" maxlength="40">Books to read 9</div>
+                        
+                        <div class="note__text" contenteditable="true" spellcheck="false" name="">
+                            book1<br>
+                            book4<br>
+                        </div>
+                    </div> -->
+                </div>
+            </main>
+        </div>
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
