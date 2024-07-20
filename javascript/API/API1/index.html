@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#">
+  <script>
+  // Change XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX to a valid API key
+    const img = document.querySelector('img');
+  fetch('https://api.giphy.com/v1/gifs/translate?api_key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&s=dogs', 
+  {mode: 'cors'})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      img.src = response.data.images.original.url;
+    });
+  </script>
+</body>
+</html>

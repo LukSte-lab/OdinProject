@@ -1,0 +1,77 @@
+/* Modal CSS START */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    box-shadow: 5px 5px 5px black;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Modal CSS END */
+
+form {
+    display: grid;
+    width: 90%;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.submit-button, .reset-button {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    width: 40%;
+}
+
+/* Validation CSS BEGIN */
+#email:invalid, #country:invalid, #zip:invalid, #pw:invalid, #conf-pw:invalid {
+    background-color: #fdd
+}
+
+#email:focus:invalid, #country:focus:invalid, #zip:focus:invalid, #pw:focus:invalid, #conf-pw:focus:invalid {
+    background-color: none;
+}
+
+.error-msgs {
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+
+.error-msgs.active {
+    padding: 0.3em;
+}
+/* Validation CSS END */

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <img src="#" />
+  <br />
+  <br />
+  <button class="get-cat-giphy">Get New Cat Giphy!</button>
+  <br />
+  <br />
+  <label for="search">Search For Specific Giphy</label>
+  <input type="text" id="search" class="search" placeholder="Search..." />
+  <button class="search-button">Search</button>
+  <button type="reset" class="reset-button">Clear</button>
+<script>
+// DOM for img/buttons/search elements
+const img = document.querySelector("img");
+const catGiphy = document.querySelector(".get-cat-giphy");
+const searchButton = document.querySelector(".search-button");
+const clearButton = document.querySelector(".reset-button");
+
+// Call fetch function on window load
+window.onload = fetchNewCatGiphy ();
+
+// Click event for button to call fetch function again
+catGiphy.addEventListener("click", fetchNewCatGiphy);
+
+// Fetch function to get new cat giphy via their API 
+// Change XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX to a valid API key
+function fetchNewCatGiphy() {
+  fetch(
+    'https://api.giphy.com/v1/gifs/translate?api_key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&s=cat',
+    { mode: "cors" }
+  )
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    img.src = response.data.images.original.url;
+  })
+  .catch(function (err) {
+    console.log("Something has gone wrong when fetching cats...", err);
+  });
+}
+
+// Click event for Search Button
+// Change XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX to a valid API key
+searchButton.addEventListener("click", fetchSearchGiphy);
+
+function fetchSearchGiphy() {
+  let searchTerm = document.getElementById("search").value;
+  if (searchTerm === "") {
+    searchTerm = "random";
+  }
+  fetch(
+    'https://api.giphy.com/v1/gifs/translate?api_key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&s=' + searchTerm,
+    { mode: "cors" }
+  )
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    img.src = response.data.images.original.url;
+  })
+  .catch(function (err) {
+    console.log("You have entered a search term that fetched no giphy, try again!", err);
+  });
+}
+
+// Click event for Clear Button
+clearButton.addEventListener("click", function clearSearch() {
+  document.getElementById("search").value = "";
+});
+</script>
+</body>
+</html>
