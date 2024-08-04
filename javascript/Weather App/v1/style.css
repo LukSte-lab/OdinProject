@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Roboto&display=swap');
+
+body {
+    background-image: url("./assets/background.jpg");
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+label, input, button {
+    margin: 5px;
+}
+
+.display-div, .display-giphy {
+    display: grid;
+    align-items: center;
+    background-color: white;
+    opacity: 0.6;
+    height: 212px;
+    width: 205px;
+    margin-top: 50px;
+}
+
+p {
+    margin: 0;
+    color: purple;
+    font-weight: 900;
+}
+
+.display-giphy, img {
+    background-color: transparent;
+    height: 212px;
+    width: 205px;
+}
